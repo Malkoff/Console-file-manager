@@ -1,3 +1,4 @@
+import math
 from quiz import birthday
 
 # Функция filter
@@ -46,6 +47,7 @@ def test_format_date():
 
     assert formatted_dict == expected_result
 
+# Функция sorted
 def test_sorted_birthdays():
     def get_birth_date(item):
         return item[1]
@@ -67,3 +69,32 @@ def test_sorted_birthdays():
         'А.Н. Толстой': '10.01.1883'}
 
     assert sorted_birthdays == expected_result
+
+
+
+def test_pi():
+    assert abs(math.pi - 3.141592653589793) < 0.0000001
+
+def test_sqrt():
+    assert abs(math.sqrt(4) - 2.0) < 0.0000001
+    assert abs(math.sqrt(9) - 3.0) < 0.0000001
+
+def test_pow():
+    assert abs(math.pow(2, 3) - 8.0) <0.0000001
+    assert abs(math.pow(5, 2) - 25.0 ) < 0.0000001
+
+def test_hypot():
+    assert abs(math.hypot(3, 4) - 5.0) < 0.0000001
+    assert abs(math.hypot(5, 12) - 13.0) < 0.0000001
+
+def test_sin():
+    assert abs(math.sin(math.pi / 2) - 1.0) < 0.0000001
+    assert abs(math.sin(0) - 0.0) < 0.0000001
+
+def test_cos():
+    assert abs(math.cos(0) - 1.0) < 0.0000001
+    assert abs(math.cos(math.pi) + 1.0) < 0.0000001
+
+def test_log():
+    assert abs(math.log(math.e) - 1.0) < 0.0000001
+    assert abs(math.log(1) - 0.0) < 0.0000001
