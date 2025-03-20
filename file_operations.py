@@ -1,6 +1,8 @@
 import os
 import shutil
 
+files = []
+dirs = []
 
 def operations():
     print('*' * 20)
@@ -10,7 +12,8 @@ def operations():
     print('4. Создать папку')
     print('5. Удаление (папки/файла)')
     print('6. Копирование (папки/файла)')
-    print('7. Назад')
+    print('7. Сохранить содержимое рабочей директории в файл')
+    print('8. Назад')
     print('*' * 20)
     choice = input('Выберите пункт: ')
     if choice == '1':
@@ -52,4 +55,16 @@ def operations():
             print('Исходная папка не существует или целевая папка уже существует')
         return operations()
     elif choice == '7':
+        for entry in os.listdir():
+            if os.path.isfile(entry):
+                files.append(entry)
+            elif os.path.isdir(entry):
+                dirs.append(entry)
+        with open('listdir.txt', 'w', encoding='utf-8') as f:
+            f.write('Файлы: ' + ','.join(files) + '\n')
+            f.write('Папки' + ','.join(dirs))
+        return operations()
+    elif choice == '8':
         return
+
+operations()
