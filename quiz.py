@@ -36,3 +36,5 @@ def victory():
         res = input('Не хотите ли ещё сыграть?\n').lower()
     print('')
     print('Спасибо за участие!')
+
+# victory()

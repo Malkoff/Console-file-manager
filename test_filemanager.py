@@ -2,7 +2,7 @@ import os, shutil
 from functions import check, operations, victory
 
 def test_check_function():
-    # Исходные данные
+    #Исходные данные
     initial_balance = 0
     initial_history = []
 

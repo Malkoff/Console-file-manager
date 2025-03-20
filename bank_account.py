@@ -34,3 +34,4 @@ def check():
     else:
         print('Ошибка, неверный пункт!')
         return check()
+# check()
