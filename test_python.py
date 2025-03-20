@@ -1,7 +1,7 @@
 import math
 from quiz import birthday
 
-# Функция filter
+#Функция filter
 def test_filter_by_year():
     def filter_by_year(item):
         key, value = item

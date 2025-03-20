@@ -88,7 +88,7 @@ def victory(writers, birthday, answers):
     correct = len(list_errors) - error
     return correct, error, correct * 100 / len(list_errors)
 
-# Пример использования функции
+#Пример использования функции
 birthday = {
     'А.И. Куприн': '07.09.1870',
     'Н.В. Гоголь': '20.03.1809',

@@ -12,3 +12,5 @@ def main_menu():
     print('*' * 20)
     print(f'Дата и время: {datetime.now()}')
     print('*' * 20)
+
+# main_menu()
