@@ -17,16 +17,23 @@ def victory():
     res = 'да'
     while res != 'нет':
         best_birthday = random.sample(writers, 5)
-        list_errors = []
-        for surname in best_birthday:
-            data = input(f'Введите дату рождения в формате "dd.mm.yyyy" {surname}\n')
-            answer = birthday[surname]
-            if data != answer:
-                list_errors.append(1)
-                print('Неверно, правильный ответ:', birth_error[surname])
-            else:
-                list_errors.append(0)
-                print('Верно!')
+        # list_errors = []
+# Применение генератора и тернарного оператора
+        list_errors = [
+            (print('Неверно, правильный ответ:', birth_error[surname]), 1)
+            if input(f'Введите дату рождения в формате "dd.mm.yyyy" {surname}\n') != birthday[surname]
+            else (print('Верно!'), 0)
+            for surname in best_birthday
+        ]
+        # for surname in best_birthday:
+        #     data = input(f'Введите дату рождения в формате "dd.mm.yyyy" {surname}\n')
+        #     answer = birthday[surname]
+        #     if data != answer:
+        #         list_errors.append(1)
+        #         print('Неверно, правильный ответ:', birth_error[surname])
+        #     else:
+        #         list_errors.append(0)
+        #         print('Верно!')
         error = sum(list_errors)
         correct = len(list_errors) - error
         print()
@@ -36,3 +43,5 @@ def victory():
         res = input('Не хотите ли ещё сыграть?\n').lower()
     print('')
     print('Спасибо за участие!')
+
+# victory()

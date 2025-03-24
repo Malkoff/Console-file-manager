@@ -7,6 +7,7 @@ from file_operations import operations
 balance = 0
 history = []
 
+
 while True:
     main_menu()
     choice = input('Выберите пункт: ')
