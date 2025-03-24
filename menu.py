@@ -1,6 +1,6 @@
 from datetime import datetime
 
-
+#
 def main_menu():
     print('*' * 20)
     print('1. Операции с файлами')
